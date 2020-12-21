@@ -14,11 +14,17 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-            $table->id();
+            $table->integerIncrements('id_articles');
+            $table->string('title_article');
+            $table->string('auteur');
+            $table->string('article_cover');
+            $table->time('delay');
+            $table->dateTime('date_add');
+            $table->integer('id_author')->unsigned()->index();
+            #$table->foreign('id_author')->references('id_author')->on('authors')->onDelete('cascade');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *

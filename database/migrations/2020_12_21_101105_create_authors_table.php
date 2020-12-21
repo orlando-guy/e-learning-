@@ -14,13 +14,13 @@ class CreateAuthorsTable extends Migration
     public function up()
     {
         Schema::create('authors', function (Blueprint $table) {
-            $table->integerIncrements('id');
+            $table->integerIncrements('id_author');
             $table->string('code')->unique();
             $table->string('firstname');
             $table->string('lastname');
             $table->string('email');
             $table->date('birthday');
-            $table->string('Avatar');
+            $table->string('avatar');
             $table->text('profil');
             $table->timestamps();
         });
